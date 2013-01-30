@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="sample.lrdev02.database.service.BooksLocalService" class="sample.lrdev02.database.service.impl.BooksLocalServiceImpl" />
+	<bean id="sample.lrdev02.database.service.persistence.BooksPersistence" class="sample.lrdev02.database.service.persistence.BooksPersistenceImpl" parent="basePersistence" />
+	<bean id="sample.lrdev05.database.service.BooksLocalService" class="sample.lrdev05.database.service.impl.BooksLocalServiceImpl" />
+	<bean id="sample.lrdev05.database.service.persistence.BooksPersistence" class="sample.lrdev05.database.service.persistence.BooksPersistenceImpl" parent="basePersistence" />
+</beans>

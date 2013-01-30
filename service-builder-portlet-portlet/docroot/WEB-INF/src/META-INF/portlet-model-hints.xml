@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="sample.book.servicebuilder.model.Book">
+		<field name="bookId" type="long" />
+		<field name="title" type="String" />
+		<field name="author" type="String" />
+		<field name="isbn" type="long" />
+		<field name="summary" type="String" />
+	</model>
+</model-hints>

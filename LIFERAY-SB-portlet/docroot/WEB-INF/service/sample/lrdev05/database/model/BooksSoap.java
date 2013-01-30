@@ -1,0 +1,255 @@
+/**
+ * Copyright (c) 2000-2012 Liferay, Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ */
+
+package sample.lrdev05.database.model;
+
+import java.io.Serializable;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+/**
+ * This class is used by SOAP remote services.
+ *
+ * @author    mshanmugam
+ * @generated
+ */
+public class BooksSoap implements Serializable {
+	public static BooksSoap toSoapModel(Books model) {
+		BooksSoap soapModel = new BooksSoap();
+
+		soapModel.setUuid(model.getUuid());
+		soapModel.setBookId(model.getBookId());
+		soapModel.setResourcePrimKey(model.getResourcePrimKey());
+		soapModel.setCompanyId(model.getCompanyId());
+		soapModel.setGroupId(model.getGroupId());
+		soapModel.setUserId(model.getUserId());
+		soapModel.setUserName(model.getUserName());
+		soapModel.setCreateDate(model.getCreateDate());
+		soapModel.setModifiedDate(model.getModifiedDate());
+		soapModel.setStatus(model.getStatus());
+		soapModel.setStatusByUserId(model.getStatusByUserId());
+		soapModel.setStatusByUserName(model.getStatusByUserName());
+		soapModel.setStatusDate(model.getStatusDate());
+		soapModel.setTitle(model.getTitle());
+		soapModel.setAuthor(model.getAuthor());
+		soapModel.setSummary(model.getSummary());
+		soapModel.setIsbn(model.getIsbn());
+
+		return soapModel;
+	}
+
+	public static BooksSoap[] toSoapModels(Books[] models) {
+		BooksSoap[] soapModels = new BooksSoap[models.length];
+
+		for (int i = 0; i < models.length; i++) {
+			soapModels[i] = toSoapModel(models[i]);
+		}
+
+		return soapModels;
+	}
+
+	public static BooksSoap[][] toSoapModels(Books[][] models) {
+		BooksSoap[][] soapModels = null;
+
+		if (models.length > 0) {
+			soapModels = new BooksSoap[models.length][models[0].length];
+		}
+		else {
+			soapModels = new BooksSoap[0][0];
+		}
+
+		for (int i = 0; i < models.length; i++) {
+			soapModels[i] = toSoapModels(models[i]);
+		}
+
+		return soapModels;
+	}
+
+	public static BooksSoap[] toSoapModels(List<Books> models) {
+		List<BooksSoap> soapModels = new ArrayList<BooksSoap>(models.size());
+
+		for (Books model : models) {
+			soapModels.add(toSoapModel(model));
+		}
+
+		return soapModels.toArray(new BooksSoap[soapModels.size()]);
+	}
+
+	public BooksSoap() {
+	}
+
+	public long getPrimaryKey() {
+		return _bookId;
+	}
+
+	public void setPrimaryKey(long pk) {
+		setBookId(pk);
+	}
+
+	public String getUuid() {
+		return _uuid;
+	}
+
+	public void setUuid(String uuid) {
+		_uuid = uuid;
+	}
+
+	public long getBookId() {
+		return _bookId;
+	}
+
+	public void setBookId(long bookId) {
+		_bookId = bookId;
+	}
+
+	public long getResourcePrimKey() {
+		return _resourcePrimKey;
+	}
+
+	public void setResourcePrimKey(long resourcePrimKey) {
+		_resourcePrimKey = resourcePrimKey;
+	}
+
+	public long getCompanyId() {
+		return _companyId;
+	}
+
+	public void setCompanyId(long companyId) {
+		_companyId = companyId;
+	}
+
+	public long getGroupId() {
+		return _groupId;
+	}
+
+	public void setGroupId(long groupId) {
+		_groupId = groupId;
+	}
+
+	public long getUserId() {
+		return _userId;
+	}
+
+	public void setUserId(long userId) {
+		_userId = userId;
+	}
+
+	public String getUserName() {
+		return _userName;
+	}
+
+	public void setUserName(String userName) {
+		_userName = userName;
+	}
+
+	public Date getCreateDate() {
+		return _createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		_createDate = createDate;
+	}
+
+	public Date getModifiedDate() {
+		return _modifiedDate;
+	}
+
+	public void setModifiedDate(Date modifiedDate) {
+		_modifiedDate = modifiedDate;
+	}
+
+	public int getStatus() {
+		return _status;
+	}
+
+	public void setStatus(int status) {
+		_status = status;
+	}
+
+	public long getStatusByUserId() {
+		return _statusByUserId;
+	}
+
+	public void setStatusByUserId(long statusByUserId) {
+		_statusByUserId = statusByUserId;
+	}
+
+	public String getStatusByUserName() {
+		return _statusByUserName;
+	}
+
+	public void setStatusByUserName(String statusByUserName) {
+		_statusByUserName = statusByUserName;
+	}
+
+	public Date getStatusDate() {
+		return _statusDate;
+	}
+
+	public void setStatusDate(Date statusDate) {
+		_statusDate = statusDate;
+	}
+
+	public String getTitle() {
+		return _title;
+	}
+
+	public void setTitle(String title) {
+		_title = title;
+	}
+
+	public String getAuthor() {
+		return _author;
+	}
+
+	public void setAuthor(String author) {
+		_author = author;
+	}
+
+	public String getSummary() {
+		return _summary;
+	}
+
+	public void setSummary(String summary) {
+		_summary = summary;
+	}
+
+	public String getIsbn() {
+		return _isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		_isbn = isbn;
+	}
+
+	private String _uuid;
+	private long _bookId;
+	private long _resourcePrimKey;
+	private long _companyId;
+	private long _groupId;
+	private long _userId;
+	private String _userName;
+	private Date _createDate;
+	private Date _modifiedDate;
+	private int _status;
+	private long _statusByUserId;
+	private String _statusByUserName;
+	private Date _statusDate;
+	private String _title;
+	private String _author;
+	private String _summary;
+	private String _isbn;
+}

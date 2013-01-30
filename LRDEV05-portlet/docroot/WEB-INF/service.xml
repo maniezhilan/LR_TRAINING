@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="sample.lrdev05.database">
+	<author>mshanmugam</author>
+	<namespace>B</namespace>
+
+	<entity name="Books" uuid="true" local-service="true" remote-service="false">
+
+		<!-- PK fields -->
+
+		<column name="bookId" type="long" primary="true" />
+		
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long"></column>
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		
+		<column name="status" type="int" />
+		<column name="statusByUserId" type="long" />
+    	<column name="statusByUserName" type="String" />
+    	<column name="statusDate" type="Date" />
+
+		
+
+		<!-- Other fields -->
+
+		<column name="title" type="String"></column>
+        <column name="author" type="String"></column>
+        <column name="summary" type="String"></column>
+        <column name="isbn" type="String"></column>
+
+		<!-- Order -->
+
+		<order>
+          <order-column name="bookId" order-by="asc"/>
+          <order-column name="createDate" order-by="desc"/>
+        </order>
+
+		<!-- Finder methods -->
+
+		<finder return-type="Collection" name="GroupId">
+          <finder-column name="groupId"></finder-column>
+        </finder>
+      	<finder return-type="Collection" name="CompanyId">
+           <finder-column name="companyId"></finder-column>
+      	</finder>
+        <finder return-type="Collection" name="UserId">
+          <finder-column name="userId"></finder-column>
+        </finder>
+        <finder return-type="Collection" name="Group_Title">
+          <finder-column name="groupId"></finder-column>
+        <finder-column name="title"></finder-column>
+        </finder>
+        <finder return-type="Collection" name="Group_Author">
+          <finder-column name="groupId"></finder-column>
+          <finder-column name="author"></finder-column>
+        </finder>
+        
+        <reference package-path="com.liferay.portal" entity="User" />
+    	<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+    	<reference package-path="com.liferay.portlet.ratings" entity="RatingsStats" />
+        
+        
+	</entity>
+</service-builder>

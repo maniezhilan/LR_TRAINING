@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="sample.lrdev05.database.model.Books">
+		<field name="uuid" type="String" />
+		<field name="bookId" type="long" />
+		<field name="resourcePrimKey" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="status" type="int" />
+		<field name="statusByUserId" type="long" />
+		<field name="statusByUserName" type="String" />
+		<field name="statusDate" type="Date" />
+		<field name="title" type="String" />
+		<field name="author" type="String" />
+		<field name="summary" type="String">
+			<hint name="max-length">10000</hint>
+		</field>
+		<field name="isbn" type="String" />
+	</model>
+</model-hints>

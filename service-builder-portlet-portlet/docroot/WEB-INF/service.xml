@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_0_0.dtd">
+<service-builder package-path="sample.book.servicebuilder">
+    <namespace>servicebuilder</namespace>
+    <entity name="Book" local-service="true" remote-service="false">
+
+        <!-- PK fields -->
+
+        <column name="bookId" type="long" primary="true" />
+        <column name="title" type="String" />
+        <column name="author" type="String" />
+        <column name="isbn" type="long" />
+        <column name="summary" type="String" />
+        
+        <!-- Group instance -->
+
+        <column name="groupId" type="long" />
+
+        <!-- Audit fields -->
+
+        <column name="companyId" type="long" />
+        <column name="userId" type="long" />
+        <column name="userName" type="String" />
+        <column name="createDate" type="Date" />
+        <column name="modifiedDate" type="Date" />
+        <order by="asc">
+          <order-column name="bookId"></order-column>
+       </order>
+      <finder return-type="Collection" name="GroupId">
+          <finder-column name="groupId"></finder-column>
+       </finder>
+      <finder return-type="Collection" name="CompanyId">
+           <finder-column name="companyId"></finder-column>
+      </finder>
+      <finder return-type="Collection" name="UserId">
+          <finder-column name="userId"></finder-column>
+      </finder>
+      <finder return-type="Collection" name="Group_Title">
+          <finder-column name="groupId"></finder-column>
+      <finder-column name="title"></finder-column>
+        </finder>
+      <finder return-type="Collection" name="Group_Author">
+          <finder-column name="groupId"></finder-column>
+          <finder-column name="author"></finder-column>
+       </finder>
+        
+    </entity>
+</service-builder>
